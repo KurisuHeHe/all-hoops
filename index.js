@@ -21,7 +21,6 @@ function displayPlayerInfo(responseJson) {
         "'" +
         responseJson.data[i].height_inches}</li>
       <li>Position: ${responseJson.data[i].position}</li>
-      <li>Team: ${responseJson.data[i].team.full_name}</li>
       <li>Weight(lbs): ${responseJson.data[i].weight_pounds}</li>`
     );
   }
