@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>nba-app</title>
+    <meta name="description" content="nba player database" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <form>
+      <label for="search"
+        >Know how many assist Lebron averaged in 2011? Search below and find
+        out</label
+      >
+      <br />
+      <input
+        type="text"
+        id="search"
+        name="player-search"
+        value="Jayson Tatum"
+      />
+      <input type="number" id="season" value="2019" />
+      <input type="submit" value="search" />
+      <p class="error-message"></p>
+      <section class="results hidden">
+        <h2>Player Info</h2>
+        <ul class="results-list"></ul>
+      </section>
+      <section class="player-stats hidden">
+        <h2>Player Stats</h2>
+        <ul class="stats"></ul>
+      </section>
+    </form>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
