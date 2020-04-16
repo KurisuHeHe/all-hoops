@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  font-family: "Oswald";
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -29,9 +32,8 @@ input {
   text-align: center;
   /* border: 1px red solid; */
   width: 300px;
-  height: 150px;
+  height: 200px;
   margin: 0 auto;
-  margin-top: 150px;
 }
 
 .info-container {
@@ -40,6 +42,7 @@ input {
   width: 300px;
   height: 150px;
   margin: 0 auto;
+  font-size: 14px;
 }
 
 .stats-container {
@@ -48,6 +51,20 @@ input {
   width: 300px;
   height: 320px;
   margin: 0 auto;
+  font-size: 14px;
+}
+
+.picture-container {
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.basketball-img {
+  width: 200px;
+  height: 200px;
 }
 
 ul {

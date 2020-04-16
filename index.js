@@ -52,14 +52,10 @@ function displayResults(responseJson) {
     for (let i = 0; i < responseJson.data.length; i++) {
       $(".stats").append(
         `
-      <li> Season: ${responseJson.data[i].season}</li>
-      <li> Games Played: ${responseJson.data[i].games_played}</li>
-      <li> Minutes: ${responseJson.data[i].min}</li>
-      <li> Points: ${responseJson.data[i].pts}</li>
-      <li> Rebounds: ${responseJson.data[i].reb}</li>
-      <li> Assist: ${responseJson.data[i].ast}</li>
-      <li> Steals: ${responseJson.data[i].stl}</li>
-      <li> Blocks: ${responseJson.data[i].blk}</li>`
+      <li> Season: ${responseJson.data[i].season} Games Played: ${responseJson.data[i].games_played}</li>
+      <li> Minutes: ${responseJson.data[i].min} Points: ${responseJson.data[i].pts}</li>
+      <li> Rebounds: ${responseJson.data[i].reb} Assist: ${responseJson.data[i].ast}</li>
+      <li> Steals: ${responseJson.data[i].stl} Blocks: ${responseJson.data[i].blk}</li>`
       );
     }
   }
