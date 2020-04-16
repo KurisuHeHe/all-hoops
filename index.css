@@ -1,7 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: orange;
+  background-color: black;
+}
+
 .hidden {
   display: none;
 }
 
 .error-message {
   color: red;
+}
+
+input {
+  border: 1px black solid;
+  background-color: #c8c8c8;
+  color: black;
+}
+
+::placeholder {
+  color: black;
+}
+
+.container {
+  text-align: center;
+  /* border: 1px red solid; */
+  width: 300px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.info-container {
+  text-align: center;
+  /* border: 1px red solid; */
+  width: 300px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.stats-container {
+  text-align: center;
+  /* border: 1px red solid; */
+  width: 300px;
+  height: 320px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
 }

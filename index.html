@@ -9,30 +9,40 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <form>
-      <label for="search"
-        >Know how many assist Lebron averaged in 2011? Search below and find
-        out</label
-      >
-      <br />
-      <input
-        type="text"
-        id="search"
-        name="player-search"
-        value="Jayson Tatum"
-      />
-      <input type="number" id="season" value="2019" />
-      <input type="submit" value="search" />
+    <div class="container">
+      <form>
+        <p>
+          Know how many assist Lebron averaged in 2011? Search below and find
+          out
+        </p>
+        <label for="search">Player Name</label>
+        <input
+          type="text"
+          id="search"
+          name="player-search"
+          placeholder="Ex: Jayson Tatum"
+          required
+        />
+        <br />
+        <label for="season">Season</label>
+        <input type="number" id="season" placeholder="Ex: 2019" required />
+        <br />
+        <input type="submit" value="Search" />
+      </form>
+    </div>
+    <div class="info-container">
       <p class="error-message"></p>
       <section class="results hidden">
         <h2>Player Info</h2>
         <ul class="results-list"></ul>
       </section>
+    </div>
+    <div class="stats-container">
       <section class="player-stats hidden">
         <h2>Player Stats</h2>
         <ul class="stats"></ul>
       </section>
-    </form>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="

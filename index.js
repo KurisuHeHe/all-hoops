@@ -1,7 +1,6 @@
 "use strict";
 
 const searchUrl = "https://www.balldontlie.io/api/v1/players";
-// const season = document.getElementById("season").value;
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params).map(
@@ -29,7 +28,6 @@ function displayPlayerInfo(responseJson) {
 
 function getStats(playerID, season) {
   const statsUrl = `https://www.balldontlie.io/api/v1/season_averages?player_ids[]=${playerID}&season=${season}`;
-
   fetch(statsUrl)
     .then(response => {
       if (response.ok) {
@@ -37,7 +35,9 @@ function getStats(playerID, season) {
       }
       throw new Error(response.statusText);
     })
-    .then(responseJson => displayResults(responseJson))
+    .then(responseJson => {
+      displayResults(responseJson), console.log(responseJson.data);
+    })
     .catch(err => {
       $(".error-message").text(`Something went wrong: ${err.message}`);
     });
@@ -45,18 +45,23 @@ function getStats(playerID, season) {
 
 function displayResults(responseJson) {
   $(".stats").empty();
-  for (let i = 0; i < responseJson.data.length; i++) {
-    $(".stats").append(
-      `<li> Player ID: ${responseJson.data[i].player_id}</li>
+  if (responseJson.data.length == 0) {
+    $(".stats").append(`<li> This player did not play during the season </li>`);
+    console.log("hey");
+  } else {
+    for (let i = 0; i < responseJson.data.length; i++) {
+      $(".stats").append(
+        `
       <li> Season: ${responseJson.data[i].season}</li>
-      <li> Games Player: ${responseJson.data[i].games_played}</li>
+      <li> Games Played: ${responseJson.data[i].games_played}</li>
       <li> Minutes: ${responseJson.data[i].min}</li>
       <li> Points: ${responseJson.data[i].pts}</li>
       <li> Rebounds: ${responseJson.data[i].reb}</li>
       <li> Assist: ${responseJson.data[i].ast}</li>
       <li> Steals: ${responseJson.data[i].stl}</li>
       <li> Blocks: ${responseJson.data[i].blk}</li>`
-    );
+      );
+    }
   }
   $(".player-stats").removeClass("hidden");
 }
