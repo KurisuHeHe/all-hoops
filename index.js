@@ -35,9 +35,7 @@ function getStats(playerID, season) {
       }
       throw new Error(response.statusText);
     })
-    .then(responseJson => {
-      displayResults(responseJson), console.log(responseJson.data);
-    })
+    .then(responseJson => displayResults(responseJson))
     .catch(err => {
       $(".error-message").text(`Something went wrong: ${err.message}`);
     });
@@ -91,7 +89,11 @@ function handleForm() {
     event.preventDefault();
     const searchTerm = $("#search").val();
     const seasonTerm = $("#season").val();
-    getPlayers(searchTerm, seasonTerm);
+    if (searchTerm.split(" ").length == 2) {
+      getPlayers(searchTerm, seasonTerm);
+    } else {
+      alert("please provide a full name");
+    }
   });
 }
 

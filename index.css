@@ -25,7 +25,8 @@ input {
 }
 
 ::placeholder {
-  color: black;
+  color: #404040;
+  font-style: italic;
 }
 
 .container {
@@ -69,4 +70,17 @@ input {
 
 ul {
   list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .info-container {
+    font-size: 18px;
+  }
+  .stats-container {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .container {
+    font-size: 18px;
+  }
 }
