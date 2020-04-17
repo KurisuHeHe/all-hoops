@@ -8,7 +8,7 @@ As a die hard NBA fan, I wanted to develop an app that was simple to use yet pro
 
 # Screenshot
 
-
+(demo-pic.png)
 
 
 
