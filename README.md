@@ -1,4 +1,4 @@
-# nba-app
+# Hooper - Stats
 
 An app tailored for NBA fans who are genuienly interested player performance throughout the years.
 
