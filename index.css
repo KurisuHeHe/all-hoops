@@ -52,6 +52,14 @@ input {
   font-size: 14px;
 }
 
+.video-container {
+  text-align: center;
+  width: 300px;
+  height: 320px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
 .picture-container {
   text-align: center;
   width: 200px;

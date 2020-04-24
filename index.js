@@ -1,6 +1,7 @@
 "use strict";
 
 const searchUrl = "https://www.balldontlie.io/api/v1/players";
+const googleToken = "AIzaSyDO2-6L-nqn0ldkTvQXeW8XtvVbgerEiRw";
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params).map(
@@ -39,6 +40,32 @@ function getStats(playerID, season) {
     .catch(err => {
       $(".error-message").text(`Something went wrong: ${err.message}`);
     });
+}
+
+function getVideos(searchQuery) {
+  const videoUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&order=relevance&q=${searchQuery}&type=video&key=${googleToken}`;
+  fetch(videoUrl)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error(response.statusText);
+    })
+    .then(responseJson => displayVideos(responseJson))
+    .catch(err => {
+      $(".error-message").text(`Something went wrong: ${err.message}`);
+    });
+}
+
+function displayVideos(responseJson) {
+  $(".vids").empty();
+  for (let i = 0; i < responseJson.items.length; i++) {
+    console.log(responseJson.items[i].id.videoId);
+    $(".vids").append(
+      `<li> <iframe height=420 width=400 src=\"https://www.youtube.com/embed/${responseJson.items[i].id.videoId}/"></iframe> </li>`
+    );
+  }
+  $(".videos").removeClass("hidden");
 }
 
 function displayResults(responseJson) {
@@ -89,6 +116,7 @@ function handleForm() {
     event.preventDefault();
     const searchTerm = $("#search").val();
     const seasonTerm = $("#season").val();
+    getVideos(searchTerm);
     if (searchTerm.split(" ").length == 2) {
       getPlayers(searchTerm, seasonTerm);
     } else {
