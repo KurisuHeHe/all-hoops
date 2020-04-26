@@ -62,7 +62,6 @@ function getVideos(searchQuery) {
 function displayVideos(responseJson) {
   $(".vids").empty();
   for (let i = 0; i < responseJson.items.length; i++) {
-    console.log(responseJson.items[i].id.videoId);
     $(".vids").append(
       `<div class="yt-item"> <iframe src=\"https://www.youtube.com/embed/${responseJson.items[i].id.videoId}/"></iframe> </div>`
     );
