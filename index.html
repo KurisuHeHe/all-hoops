@@ -38,26 +38,33 @@
         <label for="season">Season</label>
         <input type="number" id="season" placeholder="Ex: 2019" required />
         <br />
-        <input type="submit" value="Search" />
+        <input type="submit" id="submit" value="Search" />
       </form>
     </div>
-    <div class="info-container">
-      <p class="error-message"></p>
-      <section class="results hidden">
-        <h2>Player Info</h2>
-        <ul class="results-list"></ul>
-      </section>
+    <div class="data-container">
+      <div class="info-container">
+        <p class="error-message"></p>
+        <section class="results hidden">
+          <h2>Player Info</h2>
+          <ul class="results-list"></ul>
+        </section>
+      </div>
+      <div class="stats-container">
+        <section class="player-stats hidden">
+          <h2>Player Stats</h2>
+          <ul class="stats"></ul>
+        </section>
+      </div>
     </div>
-    <div class="stats-container">
-      <section class="player-stats hidden">
-        <h2>Player Stats</h2>
-        <ul class="stats"></ul>
-      </section>
+    <div class="content-container hidden">
+      <p>Wish to see more content? Click Below</p>
+      <input type="submit" id="go" value="Go!" />
     </div>
     <div class="video-container">
       <section class="videos hidden">
         <h2>Player Videos</h2>
-        <ul class="vids"></ul>
+        <br />
+        <div class="vids"></div>
       </section>
     </div>
     <script

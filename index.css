@@ -22,6 +22,22 @@ input {
   border: 1px black solid;
   background-color: #c8c8c8;
   color: black;
+  font-size: 14px;
+}
+
+#submit {
+  border: 0;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#go {
+  border: 0;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin-top: 15px;
 }
 
 ::placeholder {
@@ -47,7 +63,7 @@ input {
 .stats-container {
   text-align: center;
   width: 300px;
-  height: 320px;
+  height: 220px;
   margin: 0 auto;
   font-size: 14px;
 }
@@ -58,6 +74,12 @@ input {
   height: 320px;
   margin: 0 auto;
   font-size: 14px;
+  margin-top: 20px;
+}
+
+.content-container {
+  text-align: center;
+  font-size: 14px;
 }
 
 .picture-container {
@@ -66,6 +88,10 @@ input {
   height: 200px;
   margin: 0 auto;
   margin-top: 70px;
+}
+
+.btn-vid {
+  text-align: center;
 }
 
 .basketball-img {
@@ -78,14 +104,44 @@ ul {
 }
 
 @media (min-width: 1024px) {
+  .data-container {
+    flex-direction: row;
+    display: flex;
+    margin: 0 200px;
+  }
+  .video-container {
+    display: flex;
+    flex-direction: row;
+    width: 900px;
+  }
   .info-container {
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: 20px;
   }
   .stats-container {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 20px;
   }
   .container {
-    font-size: 18px;
+    font-size: 16px;
+  }
+  .content-container {
+    font-size: 16px;
+  }
+  .vids {
+    flex-direction: row;
+    display: flex;
+  }
+}
+
+@media (min-width: 1440px) {
+  .data-container {
+    margin: 0 320px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .data-container {
+    margin: 0 500px;
   }
 }

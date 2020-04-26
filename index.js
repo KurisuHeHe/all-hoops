@@ -1,7 +1,7 @@
 "use strict";
 
 const searchUrl = "https://www.balldontlie.io/api/v1/players";
-const googleToken = "AIzaSyDO2-6L-nqn0ldkTvQXeW8XtvVbgerEiRw";
+const googleToken = "AIzaSyAgE8IayOAxLdH5XFeo9Nd8crgDXroYX_E";
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params).map(
@@ -43,18 +43,20 @@ function getStats(playerID, season) {
 }
 
 function getVideos(searchQuery) {
-  const videoUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&order=relevance&q=${searchQuery}&type=video&key=${googleToken}`;
-  fetch(videoUrl)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error(response.statusText);
-    })
-    .then(responseJson => displayVideos(responseJson))
-    .catch(err => {
-      $(".error-message").text(`Something went wrong: ${err.message}`);
-    });
+  $("#go").on("click", event => {
+    const videoUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&order=relevance&q=${searchQuery}&type=video&key=${googleToken}`;
+    fetch(videoUrl)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      })
+      .then(responseJson => displayVideos(responseJson))
+      .catch(err => {
+        $(".error-message").text(`Something went wrong: ${err.message}`);
+      });
+  });
 }
 
 function displayVideos(responseJson) {
@@ -62,7 +64,7 @@ function displayVideos(responseJson) {
   for (let i = 0; i < responseJson.items.length; i++) {
     console.log(responseJson.items[i].id.videoId);
     $(".vids").append(
-      `<li> <iframe height=420 width=400 src=\"https://www.youtube.com/embed/${responseJson.items[i].id.videoId}/"></iframe> </li>`
+      `<div class="yt-item"> <iframe src=\"https://www.youtube.com/embed/${responseJson.items[i].id.videoId}/"></iframe> </div>`
     );
   }
   $(".videos").removeClass("hidden");
@@ -85,6 +87,7 @@ function displayResults(responseJson) {
     }
   }
   $(".player-stats").removeClass("hidden");
+  $(".content-container").removeClass("hidden");
 }
 
 function getPlayers(player, year) {
