@@ -21,4 +21,4 @@ As a die hard NBA fan, I wanted to develop an app that was simple to use yet pro
 
 # Demo
 
-- [Live Demo](https://kurisuhehe.github.io/nba-app/)
+- [Live Demo](https://kurisuhehe.github.io/all-hoops/)
